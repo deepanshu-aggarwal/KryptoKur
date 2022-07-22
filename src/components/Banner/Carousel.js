@@ -29,7 +29,7 @@ const numberWithCommas = (x) => {
 const Carousel = () => {
     const classes = useStyles();
     const {currency, symbol} = KryptoState()
-    const[trending,setTrending] = useState([])
+    const [trending,setTrending] = useState([])
 
     const items = trending.map((coin) => {
         let profit = coin.price_change_percentage_24h >= 0
@@ -79,8 +79,6 @@ const Carousel = () => {
     useEffect(() => {
         fetchTrendingCoins()
     }, [currency])
-    
-    console.log(trending)
 
     return (
         <div className={classes.carousel}>
